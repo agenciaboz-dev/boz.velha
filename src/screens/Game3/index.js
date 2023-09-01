@@ -1,25 +1,37 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
-export default function Game3() {
-  const [board, setBoard] = useState([
+export default function Game3({navigation}) {
+  const initialBoard = [
     ['', '', ''],
     ['', '', ''],
     ['', '', ''],
-  ]);
+  ];
+
+  const [board, setBoard] = useState(initialBoard);
+  const [currentPlayer, setCurrentPlayer] = useState('O');
+  const [gameOver, setGameOver] = useState(false);
+
+  useEffect(() => {
+    checkDraw(); // Check for a draw condition every time the board changes (after each move)
+  }, [board]);
+
+  const checkDraw = () => {
+    // Check if all slots are filled and there is no winner
+    const isDraw = board.every(row => row.every(slot => slot === 'X' || slot === 'O'));
+    if (isDraw && !gameOver) {
+      setGameOver(true);
+      navigation.navigate('Empate');
+    }
+  };
 
   const handleSlotPress = (row, col) => {
     // Check if the slot is already filled or if the game is over
-    // if (board[row][col] === '' && !gameOver) {
-    //   const newBoard = [...board];
-    //   newBoard[row][col] = currentPlayer === 'X' ? 'X' : 'O';
-    //   setBoard(newBoard);
-    //   setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
-    // }
-    if (board[row][col] === '') {
+    if (board[row][col] === '' && !gameOver) {
       const newBoard = [...board];
-      newBoard[row][col] = 'X' ? 'O' : 'X';
+      newBoard[row][col] = currentPlayer;
       setBoard(newBoard);
+      setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
     }
   };
 
