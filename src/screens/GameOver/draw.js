@@ -10,8 +10,8 @@ export default function Draw({navigation}) {
         }}>
             <Text>Empate</Text>
             <Button
-            title='Home'
-            onPress={() => navigation.navigate('Home')}
+            title='Inicio'
+            onPress={() => navigation.navigate('Inicio')}
             />
         </View>
     )

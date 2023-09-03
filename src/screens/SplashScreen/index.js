@@ -10,8 +10,8 @@ export default function SplashScreen({navigation}) {
         }}>
             <Text>SplashScreen</Text>
             <Button
-            title='Home'
-            onPress={() => navigation.navigate('Home')}
+            title='Inicio'
+            onPress={() => navigation.navigate('Inicio')}
             />
         </View>
     )

@@ -10,8 +10,8 @@ export default function Winner_O({navigation}) {
         }}>
             <Text>O ganhou</Text>
             <Button
-            title='Home'
-            onPress={() => navigation.navigate('Home')}
+            title='Inicio'
+            onPress={() => navigation.navigate('Inicio')}
             />
         </View>
     )

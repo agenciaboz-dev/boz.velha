@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Text, View } from 'react-native';
 
-export default function Home({navigation}) {
+export default function Inicio({navigation}) {
     return (
         <View style={{
             justifyContent: "center",
@@ -11,7 +11,7 @@ export default function Home({navigation}) {
             <Text>Olá</Text>
             <Button
             title='Jogar'
-            onPress={() => navigation.navigate('Game3')}
+            onPress={() => navigation.navigate('Game')}
             />
         </View>
     )
