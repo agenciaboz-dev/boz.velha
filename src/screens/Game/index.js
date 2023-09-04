@@ -65,8 +65,6 @@ export default function Game({ navigation }) {
         ))}
 
       </View>
-        ))}
-    </View>
     </View >
-  );
+  )
 }
