@@ -1,11 +1,3 @@
-export function createInitialBoard(size) {
-    const initialBoard = [];
-    for (let i = 0; i < size; i++) {
-        initialBoard.push(Array(size).fill(''));
-    }
-    return initialBoard;
-}
-
 export function handleSlotPress(row, col, board, currentPlayer, setBoard, setCurrentPlayer, winner) {
     // Check if the slot is already filled or if there is a winner
     if (board[row][col] === '' && !winner) {
@@ -16,105 +8,33 @@ export function handleSlotPress(row, col, board, currentPlayer, setBoard, setCur
     }
 }
 
-export function checkWinner(board, setWinner, navigation, size) {
-    // Check rows
-    for (let i = 0; i < size; i++) {
-        for (let j = 0; j <= size - 3; j++) {
-            const symbol = board[i][j];
-            if (symbol !== '') {
-                let isWinningSequence = true;
-                for (let k = 1; k < 3; k++) {
-                    if (board[i][j + k] !== symbol) {
-                        isWinningSequence = false;
-                        break;
-                    }
-                }
-                if (isWinningSequence) {
-                    for (let k = 0; k < 3; k++) {
-                        updatedStyles[i][j + k] = { backgroundColor: 'blue' };
-                      }
-                    setWinner(true);
-                    navigation.navigate(`Winner_${symbol}`);
-                    return;
-                }
-            }
+export function checkWinner(board, setWinner, navigation) {
+    // Check rows, columns, and diagonals for a winner
+    for (let i = 0; i < 3; i++) {
+        // Check rows
+        if (board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][0] !== '') {
+            setWinner(true);
+            navigation.navigate(`Winner_${board[i][0]}`);
+            return;
+        }
+        // Check columns
+        if (board[0][i] === board[1][i] && board[1][i] === board[2][i] && board[0][i] !== '') {
+            setWinner(true);
+            navigation.navigate(`Winner_${board[0][i]}`);
+            return;
         }
     }
-
-    // Check columns
-    for (let i = 0; i < size; i++) {
-        for (let j = 0; j <= size - 3; j++) {
-            const symbol = board[j][i];
-            if (symbol !== '') {
-                let isWinningSequence = true;
-                for (let k = 1; k < 3; k++) {
-                    if (board[j + k][i] !== symbol) {
-                        isWinningSequence = false;
-                        break;
-                    }
-                }
-                if (isWinningSequence) {
-                    for (let k = 0; k < 3; k++) {
-                        updatedStyles[i][j + k] = { backgroundColor: 'blue' };
-                      }
-                    setWinner(true);
-                    navigation.navigate(`Winner_${symbol}`);
-                    return;
-                }
-            }
-        }
-    }
-
-    // Check main diagonal
-    for (let i = 0; i <= size - 3; i++) {
-        for (let j = 0; j <= size - 3; j++) {
-            const symbol = board[i][j];
-            if (symbol !== '') {
-                let isWinningSequence = true;
-                for (let k = 1; k < 3; k++) {
-                    if (board[i + k][j + k] !== symbol) {
-                        isWinningSequence = false;
-                        break;
-                    }
-                }
-                if (isWinningSequence) {
-                    for (let k = 0; k < 3; k++) {
-                        updatedStyles[i][j + k] = { backgroundColor: 'blue' };
-                      }
-                    setWinner(true);
-                    navigation.navigate(`Winner_${symbol}`);
-                    return;
-                }
-            }
-        }
-    }
-
-    // Check secondary diagonal
-    for (let i = 0; i <= size - 3; i++) {
-        for (let j = size - 1; j >= 2; j--) {
-            const symbol = board[i][j];
-            if (symbol !== '') {
-                let isWinningSequence = true;
-                for (let k = 1; k < 3; k++) {
-                    if (board[i + k][j - k] !== symbol) {
-                        isWinningSequence = false;
-                        break;
-                    }
-                }
-                if (isWinningSequence) {
-                    for (let k = 0; k < 3; k++) {
-                        updatedStyles[i][j + k] = { backgroundColor: 'blue' };
-                      }
-                    setWinner(true);
-                    navigation.navigate(`Winner_${symbol}`);
-                    return;
-                }
-            }
-        }
+    // Check diagonals
+    if (
+        (board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== '') ||
+        (board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[0][2] !== '')
+    ) {
+        setWinner(true);
+        navigation.navigate(`Winner_${board[1][1]}`);
     }
 }
 
-export function checkDraw(board, navigation) {
+export function checkDraw(board, setWinner, navigation) {
     // Check if all slots are filled and there was no winner
     const isDraw = board.every(row => row.every(slot => slot === 'X' || slot === 'O'));
     if (isDraw) {
