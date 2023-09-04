@@ -30,9 +30,6 @@ export function checkWinner(board, setWinner, navigation, size) {
                     }
                 }
                 if (isWinningSequence) {
-                    for (let k = 0; k < 3; k++) {
-                        updatedStyles[i][j + k] = { backgroundColor: 'blue' };
-                      }
                     setWinner(true);
                     navigation.navigate(`Winner_${symbol}`);
                     return;
@@ -54,9 +51,6 @@ export function checkWinner(board, setWinner, navigation, size) {
                     }
                 }
                 if (isWinningSequence) {
-                    for (let k = 0; k < 3; k++) {
-                        updatedStyles[i][j + k] = { backgroundColor: 'blue' };
-                      }
                     setWinner(true);
                     navigation.navigate(`Winner_${symbol}`);
                     return;
@@ -78,9 +72,6 @@ export function checkWinner(board, setWinner, navigation, size) {
                     }
                 }
                 if (isWinningSequence) {
-                    for (let k = 0; k < 3; k++) {
-                        updatedStyles[i][j + k] = { backgroundColor: 'blue' };
-                      }
                     setWinner(true);
                     navigation.navigate(`Winner_${symbol}`);
                     return;
@@ -102,9 +93,6 @@ export function checkWinner(board, setWinner, navigation, size) {
                     }
                 }
                 if (isWinningSequence) {
-                    for (let k = 0; k < 3; k++) {
-                        updatedStyles[i][j + k] = { backgroundColor: 'blue' };
-                      }
                     setWinner(true);
                     navigation.navigate(`Winner_${symbol}`);
                     return;

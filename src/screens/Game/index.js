@@ -11,14 +11,6 @@ export default function Game({ navigation }) {
   const [winner, setWinner] = useState(false);
   const [cellStyles, setCellStyles] = useState(initialCellStyles);
 
-  const initialCellStyles = Array(boardSize)
-    .fill([])
-    .map(() => Array(boardSize).fill({}));
-
-  const updatedStyles = Array(boardSize)
-    .fill([])
-    .map(() => Array(boardSize).fill({}));
-
   useEffect(() => {
     checkWinner(board, setWinner, navigation, boardSize);
     if (!winner) {
