@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { checkDraw, checkWinner, handleSlotPress } from '../../utils/gameLogic';
+import { createInitialBoard, handleSlotPress, checkWinner, checkDraw } from '../../utils/gameLogic';
 
 export default function Game({ navigation }) {
-  const initialBoard = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', ''],
-  ];
+  const boardSize = 5;
+  const initialBoard = createInitialBoard(boardSize);
 
   const [board, setBoard] = useState(initialBoard);
   const [currentPlayer, setCurrentPlayer] = useState('O');
   const [winner, setWinner] = useState(false);
+  const [cellStyles, setCellStyles] = useState(initialCellStyles);
+
+  const initialCellStyles = Array(boardSize)
+    .fill([])
+    .map(() => Array(boardSize).fill({}));
+
+  const updatedStyles = Array(boardSize)
+    .fill([])
+    .map(() => Array(boardSize).fill({}));
 
   useEffect(() => {
-    checkWinner(board, setWinner, navigation);
+    checkWinner(board, setWinner, navigation, boardSize);
     if (!winner) {
-      checkDraw(board, setWinner, navigation);
+      checkDraw(board, navigation);
     }
   }, [board, winner, navigation]);
 
@@ -40,21 +46,27 @@ export default function Game({ navigation }) {
             {row.map((slot, colIndex) => (
               <TouchableOpacity
                 key={colIndex}
-                style={{
-                  borderWidth: 5,
-                  height: 100,
-                  width: 100,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-                onPress={() => updateBoard(rowIndex, colIndex)} // Pass row and col here
+                style={[
+                  {
+                    borderWidth: 2,
+                    height: 50,
+                    width: 50,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  },
+                  cellStyles[rowIndex][colIndex], // Apply the styles here
+                ]}
+                onPress={() => updateBoard(rowIndex, colIndex)}
               >
-                <Text style={{ fontSize: 36 }}>{slot}</Text>
+                <Text style={{ fontSize: 18 }}>{slot}</Text>
               </TouchableOpacity>
             ))}
           </View>
         ))}
+
       </View>
+        ))}
     </View>
+    </View >
   );
 }
