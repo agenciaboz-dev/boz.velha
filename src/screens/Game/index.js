@@ -9,7 +9,6 @@ export default function Game({ navigation }) {
   const [board, setBoard] = useState(initialBoard);
   const [currentPlayer, setCurrentPlayer] = useState('O');
   const [winner, setWinner] = useState(false);
-  const [cellStyles, setCellStyles] = useState(initialCellStyles);
 
   useEffect(() => {
     checkWinner(board, setWinner, navigation, boardSize);
@@ -46,7 +45,6 @@ export default function Game({ navigation }) {
                     justifyContent: 'center',
                     alignItems: 'center',
                   },
-                  cellStyles[rowIndex][colIndex], // Apply the styles here
                 ]}
                 onPress={() => updateBoard(rowIndex, colIndex)}
               >
