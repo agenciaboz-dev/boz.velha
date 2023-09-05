@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { createInitialBoard, handleSlotPress, checkWinner, checkDraw } from '../../utils/gameLogic';
 
-export default function Game({ navigation }) {
-  const boardSize = 5;
-  const initialBoard = createInitialBoard(boardSize);
+export default function Game({ route, navigation }) {
+  const { player1Symbol, player1Color, player2Color, boardSize } = route.params;
+  const parsedBoardSize = parseInt(boardSize);
+
+  const initialBoard = createInitialBoard(parsedBoardSize);
 
   const [board, setBoard] = useState(initialBoard);
-  const [currentPlayer, setCurrentPlayer] = useState('O');
+  const [currentPlayer, setCurrentPlayer] = useState(player1Symbol);
   const [winner, setWinner] = useState(false);
 
   useEffect(() => {
@@ -39,7 +41,8 @@ export default function Game({ navigation }) {
                 key={colIndex}
                 style={[
                   {
-                    borderWidth: 2,
+                    backgroundColor: 'lightblue',
+                    margin: 5,
                     height: 50,
                     width: 50,
                     justifyContent: 'center',
@@ -48,12 +51,16 @@ export default function Game({ navigation }) {
                 ]}
                 onPress={() => updateBoard(rowIndex, colIndex)}
               >
-                <Text style={{ fontSize: 18 }}>{slot}</Text>
+                <Text style={{
+                  fontSize: 18,
+                  color: slot === player1Symbol ? player1Color : player2Color
+                  }}>
+                  {slot}
+                </Text>
               </TouchableOpacity>
             ))}
           </View>
         ))}
-
       </View>
     </View >
   )
