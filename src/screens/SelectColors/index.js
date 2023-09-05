@@ -18,7 +18,7 @@ export default function SelectColors({ route, navigation }) {
 
   return (
     <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 400 }}>
-      <Text>Escolha seu símbolo</Text>
+      <Text>Escolha sua cor</Text>
 
       <Text>Jogador 1</Text>
       <RadioButton.Group
