@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
+import BackButton from '../../components/BackButton';
 
 export default function SelectColors({ route, navigation }) {
   const { player1Symbol } = route.params;
@@ -51,6 +52,7 @@ export default function SelectColors({ route, navigation }) {
       </RadioButton.Group>
 
       <Button title="Escolher tabuleiro" onPress={handleProceed} />
+      <BackButton />
     </View>
   );
 }

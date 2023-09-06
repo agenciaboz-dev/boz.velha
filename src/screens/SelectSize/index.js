@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
+import BackButton from '../../components/BackButton';
 
 export default function SelectSize({ route, navigation }) {
   const { player1Symbol, player1Color, player2Color } = route.params;
@@ -39,6 +40,7 @@ export default function SelectSize({ route, navigation }) {
       </RadioButton.Group>
 
       <Button title="Começar!" onPress={handleProceed} />
+      <BackButton />
     </View>
   );
 }
