@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { createInitialBoard, handleSlotPress, checkWinner, checkDraw } from '../../utils/gameLogic';
+import Board from '../../components/Board';
 
 export default function Game({ route, navigation }) {
   const { player1Symbol, player1Color, player2Color, boardSize } = route.params;
@@ -33,35 +34,13 @@ export default function Game({ route, navigation }) {
         justifyContent: 'center',
       }}
     >
-      <View>
-        {board.map((row, rowIndex) => (
-          <View key={rowIndex} style={{ flexDirection: 'row' }}>
-            {row.map((slot, colIndex) => (
-              <TouchableOpacity
-                key={colIndex}
-                style={[
-                  {
-                    backgroundColor: 'lightblue',
-                    margin: 5,
-                    height: 50,
-                    width: 50,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  },
-                ]}
-                onPress={() => updateBoard(rowIndex, colIndex)}
-              >
-                <Text style={{
-                  fontSize: 18,
-                  color: slot === player1Symbol ? player1Color : player2Color
-                  }}>
-                  {slot}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        ))}
-      </View>
+      <Board
+        board = {board}
+        updateBoard = {updateBoard}
+        player1Symbol = {player1Symbol}
+        player1Color = {player1Color}
+        player2Color = {player2Color}
+      />
     </View >
   )
 }
