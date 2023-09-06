@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import Slot from './Slot';
+import Slot from '../Slot';
 
 export default function Board({ board, player1Symbol, navigation, boardSize, onSlotPress }) {
   return (
