@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, ImageBackground, Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
-import images from '../../utils/images';
 
 export default function SelectColors({ route, navigation }) {
   const { player1Symbol } = route.params;
@@ -19,7 +18,6 @@ export default function SelectColors({ route, navigation }) {
   }
 
   return (
-    <ImageBackground source={images.background} >
       <View style={{ height: "100%", justifyContent: 'center', alignItems: 'center' }}>
         <Text>Escolha sua cor</Text>
         <Text>Jogador 1</Text>
@@ -53,6 +51,5 @@ export default function SelectColors({ route, navigation }) {
         <Button title="Escolher tabuleiro" onPress={handleProceed} />
         <BackButton />
       </View>
-    </ImageBackground>
   );
 }

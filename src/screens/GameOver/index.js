@@ -13,7 +13,7 @@ export default function GameOver({ route, navigation }) {
     <View style={{
       justifyContent: "center",
       alignItems: "center",
-      marginTop: 400
+      height: "100%"
     }}>
       <Text>{message}</Text>
       <Button

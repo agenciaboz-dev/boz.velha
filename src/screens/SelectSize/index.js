@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, ImageBackground, Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
-import images from '../../utils/images';
 
 export default function SelectSize({ route, navigation }) {
   const { player1Symbol, player1Color, player2Color } = route.params;
@@ -19,7 +18,6 @@ export default function SelectSize({ route, navigation }) {
   }
 
   return (
-    <ImageBackground source={images.background} >
       <View style={{ height: "100%", justifyContent: 'center', alignItems: 'center' }}>
         <Text>Escolha o tamanho do tabuleiro</Text>
         <RadioButton.Group
@@ -42,6 +40,5 @@ export default function SelectSize({ route, navigation }) {
         <Button title="Começar!" onPress={handleProceed} />
         <BackButton />
       </View>
-    </ImageBackground>
   );
 }

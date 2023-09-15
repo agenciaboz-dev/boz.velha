@@ -6,7 +6,7 @@ export default function SplashScreen({navigation}) {
         <View style={{
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 400
+            height: "100%"
         }}>
             <Text>SplashScreen</Text>
             <Button
