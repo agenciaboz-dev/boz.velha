@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 export default function AppRoutes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Start" screenOptions={{ animation: 'flip', headerShown: false }}>
+      <Stack.Navigator initialRouteName="Start" screenOptions={{ animation: 'fade', headerShown: false }}>
         <Stack.Screen name="Start" component={Start}  />
         <Stack.Screen name="SelectSymbols" component={SelectSymbols}  />
         <Stack.Screen name="SelectColors" component={SelectColors}  />
