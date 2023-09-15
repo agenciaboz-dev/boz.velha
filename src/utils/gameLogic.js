@@ -31,7 +31,7 @@ export function checkWinner(board, setWinner, navigation, size) {
                 }
                 if (isWinningSequence) {
                     setWinner(true);
-                    navigation.navigate(`Winner_${symbol}`);
+                    navigation.navigate('GameOver', { outcome: `winner_${symbol}` });
                     return;
                 }
             }
@@ -52,7 +52,7 @@ export function checkWinner(board, setWinner, navigation, size) {
                 }
                 if (isWinningSequence) {
                     setWinner(true);
-                    navigation.navigate(`Winner_${symbol}`);
+                    navigation.navigate('GameOver', { outcome: `winner_${symbol}` });
                     return;
                 }
             }
@@ -73,7 +73,7 @@ export function checkWinner(board, setWinner, navigation, size) {
                 }
                 if (isWinningSequence) {
                     setWinner(true);
-                    navigation.navigate(`Winner_${symbol}`);
+                    navigation.navigate('GameOver', { outcome: `winner_${symbol}` });
                     return;
                 }
             }
@@ -94,7 +94,7 @@ export function checkWinner(board, setWinner, navigation, size) {
                 }
                 if (isWinningSequence) {
                     setWinner(true);
-                    navigation.navigate(`Winner_${symbol}`);
+                    navigation.navigate('GameOver', { outcome: `winner_${symbol}` });
                     return;
                 }
             }
@@ -106,6 +106,6 @@ export function checkDraw(board, navigation) {
     // Check if all slots are filled and there was no winner
     const isDraw = board.every(row => row.every(slot => slot === 'X' || slot === 'O'));
     if (isDraw) {
-        navigation.navigate('Draw');
+        navigation.navigate('GameOver', { outcome: 'draw' });
     }
 }

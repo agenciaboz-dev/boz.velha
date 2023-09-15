@@ -6,9 +6,7 @@ import SelectSymbols from './screens/SelectSymbols';
 import SelectColors from './screens/SelectColors';
 import SelectSize from './screens/SelectSize';
 import Game from './screens/Game';
-import Draw from './screens/GameOver/Draw';
-import Winner_O from './screens/GameOver/Winner_O';
-import Winner_X from './screens/GameOver/Winner_X';
+import GameOver from './screens/GameOver';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,9 +19,7 @@ export default function AppRoutes() {
         <Stack.Screen name="SelectColors" component={SelectColors}  />
         <Stack.Screen name="SelectSize" component={SelectSize}  />
         <Stack.Screen name="Game" component={Game} />
-        <Stack.Screen name="Draw" component={Draw} />
-        <Stack.Screen name="Winner_O" component={Winner_O} />
-        <Stack.Screen name="Winner_X" component={Winner_X} />
+        <Stack.Screen name="GameOver" component={GameOver} />
       </Stack.Navigator>
     </NavigationContainer>
   );
