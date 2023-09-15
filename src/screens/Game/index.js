@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import { createInitialBoard, handleSlotPress, checkWinner, checkDraw } from '../../utils/gameLogic';
 import Board from '../../components/Board';
+import images from '../../utils/images';
 
 export default function Game({ route, navigation }) {
   const { player1Symbol, player1Color, player2Color, boardSize } = route.params;
@@ -25,22 +26,24 @@ export default function Game({ route, navigation }) {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        flexDirection: 'row',
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Board
-        board = {board}
-        updateBoard = {updateBoard}
-        player1Symbol = {player1Symbol}
-        player1Color = {player1Color}
-        player2Color = {player2Color}
-      />
-    </View >
+    <ImageBackground source={images.background} >
+      <View
+        style={{
+          height: "100%",
+          flexDirection: 'row',
+          // backgroundColor: '#fff',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Board
+          board = {board}
+          updateBoard = {updateBoard}
+          player1Symbol = {player1Symbol}
+          player1Color = {player1Color}
+          player2Color = {player2Color}
+        />
+      </View >
+    </ImageBackground>
   )
 }

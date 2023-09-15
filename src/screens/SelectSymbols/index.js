@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, ImageBackground, Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
+import images from '../../utils/images';
 
 export default function SelectSymbols({ navigation }) {
   const [player1Choice, setPlayer1Choice] = useState('O');
@@ -24,35 +25,34 @@ export default function SelectSymbols({ navigation }) {
   };
 
   return (
-    <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 400 }}>
-      <Text>Escolha seu símbolo</Text>
-
-      <Text>Jogador 1</Text>
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <RadioButton.Group
-          onValueChange={(value) => handlePlayer1SymbolChange(value)}
-          value={player1Choice}
-        >
-          <RadioButton.Android value="O" />
-          <RadioButton.Android value="X" />
-        </RadioButton.Group>
-        <Text>{player1Choice}</Text>
+    <ImageBackground source={images.background} >
+      <View style={{ height: "100%", justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Escolha seu símbolo</Text>
+        <Text>Jogador 1</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <RadioButton.Group
+            onValueChange={(value) => handlePlayer1SymbolChange(value)}
+            value={player1Choice}
+          >
+            <RadioButton.Android value="O" />
+            <RadioButton.Android value="X" />
+          </RadioButton.Group>
+          <Text>{player1Choice}</Text>
+        </View>
+        <Text>Jogador 2</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <RadioButton.Group
+            onValueChange={(value) => handlePlayer2SymbolChange(value)}
+            value={player2Choice}
+          >
+            <RadioButton.Android value="O" />
+            <RadioButton.Android value="X" />
+          </RadioButton.Group>
+          <Text>{player2Choice}</Text>
+        </View>
+        <Button title="Escolher cores" onPress={handleProceed} />
+        <BackButton />
       </View>
-
-      <Text>Jogador 2</Text>
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <RadioButton.Group
-          onValueChange={(value) => handlePlayer2SymbolChange(value)}
-          value={player2Choice}
-        >
-          <RadioButton.Android value="O" />
-          <RadioButton.Android value="X" />
-        </RadioButton.Group>
-        <Text>{player2Choice}</Text>
-      </View>
-
-      <Button title="Escolher cores" onPress={handleProceed} />
-      <BackButton />
-    </View>
+    </ImageBackground>
   );
 }

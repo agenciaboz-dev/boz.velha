@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, ImageBackground, Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
+import images from '../../utils/images';
 
 export default function SelectColors({ route, navigation }) {
   const { player1Symbol } = route.params;
@@ -18,41 +19,40 @@ export default function SelectColors({ route, navigation }) {
   }
 
   return (
-    <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 400 }}>
-      <Text>Escolha sua cor</Text>
-
-      <Text>Jogador 1</Text>
-      <RadioButton.Group
-        onValueChange={(value) => setPlayer1Color(value)}
-        value={player1Color}
-      >
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <RadioButton.Android value="yellow" />
-          <Text>Amarelo</Text>
-        </View>
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <RadioButton.Android value="red" />
-          <Text>Vermelho</Text>
-        </View>
-      </RadioButton.Group>
-
-      <Text>Jogador 2</Text>
-      <RadioButton.Group
-        onValueChange={(value) => setPlayer2Color(value)}
-        value={player2Color}
-      >
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <RadioButton.Android value="yellow" />
-          <Text>Amarelo</Text>
-        </View>
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <RadioButton.Android value="red" />
-          <Text>Vermelho</Text>
-        </View>
-      </RadioButton.Group>
-
-      <Button title="Escolher tabuleiro" onPress={handleProceed} />
-      <BackButton />
-    </View>
+    <ImageBackground source={images.background} >
+      <View style={{ height: "100%", justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Escolha sua cor</Text>
+        <Text>Jogador 1</Text>
+        <RadioButton.Group
+          onValueChange={(value) => setPlayer1Color(value)}
+          value={player1Color}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <RadioButton.Android value="yellow" />
+            <Text>Amarelo</Text>
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <RadioButton.Android value="red" />
+            <Text>Vermelho</Text>
+          </View>
+        </RadioButton.Group>
+        <Text>Jogador 2</Text>
+        <RadioButton.Group
+          onValueChange={(value) => setPlayer2Color(value)}
+          value={player2Color}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <RadioButton.Android value="yellow" />
+            <Text>Amarelo</Text>
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <RadioButton.Android value="red" />
+            <Text>Vermelho</Text>
+          </View>
+        </RadioButton.Group>
+        <Button title="Escolher tabuleiro" onPress={handleProceed} />
+        <BackButton />
+      </View>
+    </ImageBackground>
   );
 }
