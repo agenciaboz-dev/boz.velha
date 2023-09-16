@@ -10,7 +10,7 @@ export default function Start({navigation}) {
             height: "100%"
         }}>
             <Text>Olá</Text>
-            <ProceedButton buttonText={'Começar'} onPress={() => navigation.navigate('SelectSymbols')} />
+            <ProceedButton buttonText={'Jogar'} onPress={() => navigation.navigate('SelectSymbols')} />
         </View>
     )
 }

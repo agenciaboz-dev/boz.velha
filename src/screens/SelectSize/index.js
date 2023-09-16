@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
+import ProceedButton from '../../components/ProceedButton';
 
 export default function SelectSize({ route, navigation }) {
   const { player1Symbol, player1Color, player2Color } = route.params;

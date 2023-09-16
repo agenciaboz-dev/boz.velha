@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import ProceedButton from '../../components/ProceedButton';
 
 export default function GameOver({ route, navigation }) {
     const outcome = route.params.outcome
@@ -16,10 +17,7 @@ export default function GameOver({ route, navigation }) {
       height: "100%"
     }}>
       <Text>{message}</Text>
-      <Button
-        title='Start'
-        onPress={() => navigation.navigate('Start')}
-      />
+      <ProceedButton buttonText={'Início'} onPress={() => { navigation.navigate('Start')}} />
     </View>
   );
 }

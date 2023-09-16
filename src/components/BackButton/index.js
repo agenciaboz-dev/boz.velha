@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function BackButton() {
@@ -8,9 +8,26 @@ export default function BackButton() {
     const handleGoBack = () => {
       navigation.goBack();
     };
-  
-    return (
-      <Button title="Voltar" onPress={handleGoBack} />
-    );
-  }
-  
+
+  return (
+    <TouchableOpacity
+      style={styles.button}
+      onPress={handleGoBack}
+    >
+      <Text style={styles.text}>Voltar</Text>
+    </TouchableOpacity>
+  );
+}
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: 'blue',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  text: {
+    color: 'white',
+    fontSize: 16,
+  },
+});

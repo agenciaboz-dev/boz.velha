@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
+import ProceedButton from '../../components/ProceedButton';
 
 export default function SelectColors({ route, navigation }) {
   const { player1Symbol } = route.params;
