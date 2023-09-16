@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import ProceedButton from '../../components/ProceedButton';
 
 export default function Start({navigation}) {
     return (
@@ -9,10 +10,7 @@ export default function Start({navigation}) {
             height: "100%"
         }}>
             <Text>Olá</Text>
-            <Button
-            title='Jogar'
-            onPress={() => navigation.navigate('SelectSymbols')}
-            />
+            <ProceedButton buttonText={'Começar'} onPress={() => navigation.navigate('SelectSymbols')} />
         </View>
     )
 }

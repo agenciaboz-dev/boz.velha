@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ImageBackground, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
 
@@ -48,7 +48,7 @@ export default function SelectColors({ route, navigation }) {
             <Text>Vermelho</Text>
           </View>
         </RadioButton.Group>
-        <Button title="Escolher tabuleiro" onPress={handleProceed} />
+        <ProceedButton buttonText={'Escolher Tabuleiro'} onPress={handleProceed} />
         <BackButton />
       </View>
   );

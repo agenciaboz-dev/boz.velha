@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
+import ProceedButton from '../../components/ProceedButton';
 
 export default function SelectSymbols({ navigation }) {
   const [player1Choice, setPlayer1Choice] = useState('O');
@@ -51,7 +52,7 @@ export default function SelectSymbols({ navigation }) {
         <Text>{player2Choice}</Text>
       </View>
 
-      <Button title="Escolher cores" onPress={handleProceed} />
+      <ProceedButton buttonText={'Escolher Cores'} onPress={handleProceed} />
       <BackButton />
     </View>
   );

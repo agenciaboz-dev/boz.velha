@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 import { createInitialBoard, handleSlotPress, checkWinner, checkDraw } from '../../utils/gameLogic';
 import Board from '../../components/Board';
 

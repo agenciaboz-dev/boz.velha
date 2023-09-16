@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ImageBackground, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
 
@@ -37,7 +37,7 @@ export default function SelectSize({ route, navigation }) {
             <Text>5 x 5</Text>
           </View>
         </RadioButton.Group>
-        <Button title="Começar!" onPress={handleProceed} />
+        <ProceedButton buttonText={'Começar!'} onPress={handleProceed} />
         <BackButton />
       </View>
   );
