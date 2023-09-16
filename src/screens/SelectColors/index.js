@@ -3,12 +3,15 @@ import { Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
+import { useColors } from '../../hooks/useColors';
 
 export default function SelectColors({ route, navigation }) {
+  const colors = useColors();
+
   const { player1Symbol } = route.params;
 
-  const [player1Color, setPlayer1Color] = useState('yellow');
-  const [player2Color, setPlayer2Color] = useState('red');
+  const [player1Color, setPlayer1Color] = useState(colors.yellow);
+  const [player2Color, setPlayer2Color] = useState(colors.red);
 
   const handleProceed = () => {
     navigation.navigate('SelectSize', {
@@ -27,11 +30,11 @@ export default function SelectColors({ route, navigation }) {
           value={player1Color}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value="yellow" />
+            <RadioButton.Android value={colors.yellow} />
             <Text>Amarelo</Text>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value="red" />
+            <RadioButton.Android value={colors.red} />
             <Text>Vermelho</Text>
           </View>
         </RadioButton.Group>
@@ -41,11 +44,11 @@ export default function SelectColors({ route, navigation }) {
           value={player2Color}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value="yellow" />
+            <RadioButton.Android value={colors.yellow} />
             <Text>Amarelo</Text>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value="red" />
+            <RadioButton.Android value={colors.red} />
             <Text>Vermelho</Text>
           </View>
         </RadioButton.Group>
