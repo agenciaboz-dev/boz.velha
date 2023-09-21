@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useColors } from '../../hooks/useColors';
+import KGPrimaryPenmanshipAlt from '../../../assets/fonts/kg_primary_penmanship/KGPrimaryPenmanshipAlt.ttf';
 
 export default function ProceedButton({ buttonText, onPress }) {
   const colors = useColors();
@@ -8,13 +9,16 @@ export default function ProceedButton({ buttonText, onPress }) {
   const styles = StyleSheet.create({
     button: {
       backgroundColor: colors.primary,
-      padding: 10,
-      borderRadius: 5,
+      paddingRight: 50,
+      paddingBottom: 10,
+      paddingLeft: 50,
+      borderRadius: 50,
       alignItems: 'center',
     },
     text: {
+      fontFamily: 'KGPrimaryPenmanshipAlt',
       color: 'white',
-      fontSize: 16,
+      fontSize: 42,
     },
   });
 
