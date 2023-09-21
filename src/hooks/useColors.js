@@ -1,4 +1,4 @@
-import { colors } from '../utils/colors';
+import { colors } from '../style/colors';
 
 export function useColors() {
   return colors;
