@@ -9,7 +9,6 @@ import Game from './screens/Game';
 import GameOver from './screens/GameOver';
 import { ImageBackground } from 'react-native';
 import images from './utils/images';
-import { configureFonts } from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,8 +18,7 @@ export default function AppRoutes() {
     colors: {
       ...DefaultTheme.colors, 
       background: 'transparent'
-    },
-    fonts: configureFonts({config: {fontFamily: 'KGPrimaryPenmanshipAlt'}})
+    }
   }
 
   return (

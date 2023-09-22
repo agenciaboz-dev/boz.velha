@@ -1,7 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useColors } from '../../hooks/useColors';
-import KGPrimaryPenmanshipAlt from '../../../assets/fonts/kg_primary_penmanship/KGPrimaryPenmanshipAlt.ttf';
 
 export default function ProceedButton({ buttonText, onPress }) {
   const colors = useColors();
