@@ -1,7 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useColors } from '../../hooks/useColors';
+import { Text } from 'react-native-paper';
 
 export default function BackButton() {
     const navigation = useNavigation()
@@ -14,15 +15,16 @@ export default function BackButton() {
     const styles = StyleSheet.create({
       button: {
         backgroundColor: colors.secondary,
-        paddingRight: 50,
+        paddingTop: 5,
+        paddingRight: 25,
         paddingBottom: 5,
-        paddingLeft: 50,
+        paddingLeft: 25,
         borderRadius: 50,
         alignItems: 'center',
       },
       text: {
         color: 'white',
-        fontSize: 28,
+        fontSize: 25,
       },
     });
 

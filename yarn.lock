@@ -3207,13 +3207,6 @@ expo-file-system@~15.4.0, expo-file-system@~15.4.3:
   dependencies:
     uuid "^3.4.0"
 
-expo-font@^11.6.0:
-  version "11.6.0"
-  resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-11.6.0.tgz#7c1c8c82e3b437d54d911808fdf03578763913f3"
-  integrity sha512-ekfU0MN7vzJNGwQCJhxnhF2M9Fq/RtVF5xSQpr8+f4ISPimmKfEcArMHKCl4oG3saFVjSRX7fLbo38WOv3z5Mw==
-  dependencies:
-    fontfaceobserver "^2.1.0"
-
 expo-font@~11.4.0:
   version "11.4.0"
   resolved "https://registry.yarnpkg.com/expo-font/-/expo-font-11.4.0.tgz#e2d31c0bb76ba3c37c2d84703a49aeafc3afef28"
@@ -5505,6 +5498,11 @@ react-native-paper@^5.10.6:
     "@callstack/react-theme-provider" "^3.0.9"
     color "^3.1.2"
     use-latest-callback "^0.1.5"
+
+react-native-radio-buttons@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-radio-buttons/-/react-native-radio-buttons-1.0.0.tgz#be828b85897f80ca66ad66ad7adedb6b1890ab9d"
+  integrity sha512-9qglzqVfpFXph2aeRvpg7obDhb8X8LBexMRugXSjud7+2J1teDMsWyypE8PLbF+WCXoCCtW0K+RpHOuzv7kJjA==
 
 react-native-reanimated@~3.3.0:
   version "3.3.0"

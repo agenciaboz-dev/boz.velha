@@ -5,6 +5,7 @@ import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
 import PageTitle from '../../components/PageTitle';
 import { useColors } from '../../hooks/useColors';
+import PageSubTitle from '../../components/PageSubTitle';
 
 export default function SelectSymbols({ navigation }) {
   const colors = useColors();
@@ -34,12 +35,16 @@ export default function SelectSymbols({ navigation }) {
 
       <View
         style={{
+          alignItems: "center",
           backgroundColor: colors.background,
           borderRadius: 50,
-          height: "50%"
+          padding: 20,
+          height: "50%",
+          width: "90%"
         }}
       >
-        <Text>Jogador 1</Text>
+        <PageSubTitle pageSubTitle={'Jogador 1'}/>
+
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <RadioButton.Group
             onValueChange={(value) => handlePlayer1SymbolChange(value)}
@@ -50,7 +55,9 @@ export default function SelectSymbols({ navigation }) {
           </RadioButton.Group>
           <Text>{player1Choice}</Text>
         </View>
-        <Text>Jogador 2</Text>
+
+        <PageSubTitle pageSubTitle={'Jogador 2'}/>
+        
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <RadioButton.Group
             onValueChange={(value) => handlePlayer2SymbolChange(value)}

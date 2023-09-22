@@ -4,6 +4,7 @@ import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
 import PageTitle from '../../components/PageTitle';
+import { colors } from '../../utils/colors';
 
 export default function SelectSize({ route, navigation }) {
   const { player1Symbol, player1Color, player2Color } = route.params;
@@ -23,23 +24,35 @@ export default function SelectSize({ route, navigation }) {
       <View style={{ height: "100%", justifyContent: 'space-around', alignItems: 'center' }}>
         <PageTitle pageTitle={'Escolha o tabuleiro'} />
 
-        <RadioButton.Group
-          onValueChange={(value) => setBoardSize(value)}
-          value={boardSize}
+        <View
+          style={{
+            alignItems: "center",
+            backgroundColor: colors.background,
+            borderRadius: 50,
+            padding: 20,
+            height: "50%",
+            width: "90%"
+          }}
         >
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value="3" />
-            <Text>3 x 3</Text>
-          </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value="4" />
-            <Text>4 x 4</Text>
-          </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value="5" />
-            <Text>5 x 5</Text>
-          </View>
-        </RadioButton.Group>
+          <RadioButton.Group
+            onValueChange={(value) => setBoardSize(value)}
+            value={boardSize}
+          >
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <RadioButton.Android value="3" />
+              <Text>3 x 3</Text>
+            </View>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <RadioButton.Android value="4" />
+              <Text>4 x 4</Text>
+            </View>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <RadioButton.Android value="5" />
+              <Text>5 x 5</Text>
+            </View>
+          </RadioButton.Group>
+        </View>
+
         <ProceedButton buttonText={'Começar!'} onPress={handleProceed} />
         <BackButton />
       </View>

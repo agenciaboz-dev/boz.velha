@@ -1,32 +1,31 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useColors } from '../../hooks/useColors';
 import { Text } from 'react-native-paper';
 
-export default function ProceedButton({ buttonText, onPress }) {
+export default function PageSubTitle({ pageSubTitle }) {
   const colors = useColors();
 
   const styles = StyleSheet.create({
-    button: {
-      backgroundColor: colors.primary,
+    subtitle: {
+      backgroundColor: colors.secondary,
       paddingTop: 10,
       paddingBottom: 10,
       borderRadius: 50,
       alignItems: 'center',
-      width: "80%"
+      width: '50%'
     },
     text: {
       color: 'white',
-      fontSize: 45,
+      fontSize: 30,
     },
   });
 
   return (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={onPress}
+    <View
+      style={styles.subtitle}
     >
-      <Text style={styles.text}>{buttonText}</Text>
-    </TouchableOpacity>
+      <Text style={styles.text}>{pageSubTitle}</Text>
+    </View>
   );
 }

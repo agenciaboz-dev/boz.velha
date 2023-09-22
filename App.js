@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import AppRoutes from './src/routes';
 import { useFonts } from 'expo-font';
-import { Text } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 import { paperTheme } from './src/utils/paperTheme';
 

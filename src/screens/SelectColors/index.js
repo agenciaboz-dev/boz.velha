@@ -5,6 +5,7 @@ import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
 import { useColors } from '../../hooks/useColors';
 import PageTitle from '../../components/PageTitle';
+import PageSubTitle from '../../components/PageSubTitle';
 
 export default function SelectColors({ route, navigation }) {
   const colors = useColors();
@@ -26,34 +27,50 @@ export default function SelectColors({ route, navigation }) {
       <View style={{ height: "100%", justifyContent: 'space-around', alignItems: 'center' }}>
         <PageTitle pageTitle={'Escolha sua cor'} />
 
-        <Text>Jogador 1</Text>
-        <RadioButton.Group
-          onValueChange={(value) => setPlayer1Color(value)}
-          value={player1Color}
+        <View
+          style={{
+            alignItems: "center",
+            backgroundColor: colors.background,
+            borderRadius: 50,
+            padding: 20,
+            height: "50%",
+            width: "90%"
+          }}
         >
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value={colors.yellow} />
-            <Text>Amarelo</Text>
-          </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value={colors.red} />
-            <Text>Vermelho</Text>
-          </View>
-        </RadioButton.Group>
-        <Text>Jogador 2</Text>
-        <RadioButton.Group
-          onValueChange={(value) => setPlayer2Color(value)}
-          value={player2Color}
-        >
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value={colors.yellow} />
-            <Text>Amarelo</Text>
-          </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <RadioButton.Android value={colors.red} />
-            <Text>Vermelho</Text>
-          </View>
-        </RadioButton.Group>
+
+          <PageSubTitle pageSubTitle={'Jogador 1'}/>
+
+          <RadioButton.Group
+            onValueChange={(value) => setPlayer1Color(value)}
+            value={player1Color}
+          >
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <RadioButton.Android value={colors.yellow} />
+              <Text>Amarelo</Text>
+            </View>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <RadioButton.Android value={colors.red} />
+              <Text>Vermelho</Text>
+            </View>
+          </RadioButton.Group>
+
+          <PageSubTitle pageSubTitle={'Jogador 2'}/>
+
+          <RadioButton.Group
+            onValueChange={(value) => setPlayer2Color(value)}
+            value={player2Color}
+          >
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <RadioButton.Android value={colors.yellow} />
+              <Text>Amarelo</Text>
+            </View>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <RadioButton.Android value={colors.red} />
+              <Text>Vermelho</Text>
+            </View>
+          </RadioButton.Group>
+        </View>
+
         <ProceedButton buttonText={'Escolher Tabuleiro'} onPress={handleProceed} />
         <BackButton />
       </View>
