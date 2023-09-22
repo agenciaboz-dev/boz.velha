@@ -14,13 +14,15 @@ export default function BackButton() {
     const styles = StyleSheet.create({
       button: {
         backgroundColor: colors.secondary,
-        padding: 10,
-        borderRadius: 5,
+        paddingRight: 50,
+        paddingBottom: 5,
+        paddingLeft: 50,
+        borderRadius: 50,
         alignItems: 'center',
       },
       text: {
         color: 'white',
-        fontSize: 16,
+        fontSize: 28,
       },
     });
 

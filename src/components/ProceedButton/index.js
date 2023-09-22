@@ -9,13 +9,12 @@ export default function ProceedButton({ buttonText, onPress }) {
     button: {
       backgroundColor: colors.primary,
       paddingRight: 50,
-      paddingBottom: 10,
+      paddingBottom: 5,
       paddingLeft: 50,
       borderRadius: 50,
       alignItems: 'center',
     },
     text: {
-      fontFamily: 'KGPrimaryPenmanshipAlt',
       color: 'white',
       fontSize: 42,
     },
