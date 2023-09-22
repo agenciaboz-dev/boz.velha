@@ -4,6 +4,7 @@ import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
 import { useColors } from '../../hooks/useColors';
+import PageTitle from '../../components/PageTitle';
 
 export default function SelectColors({ route, navigation }) {
   const colors = useColors();
@@ -22,8 +23,9 @@ export default function SelectColors({ route, navigation }) {
   }
 
   return (
-      <View style={{ height: "100%", justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Escolha sua cor</Text>
+      <View style={{ height: "100%", justifyContent: 'space-around', alignItems: 'center' }}>
+        <PageTitle pageTitle={'Escolha sua cor'} />
+
         <Text>Jogador 1</Text>
         <RadioButton.Group
           onValueChange={(value) => setPlayer1Color(value)}

@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
+import PageTitle from '../../components/PageTitle';
 
 export default function SelectSize({ route, navigation }) {
   const { player1Symbol, player1Color, player2Color } = route.params;
@@ -19,8 +20,9 @@ export default function SelectSize({ route, navigation }) {
   }
 
   return (
-      <View style={{ height: "100%", justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Escolha o tamanho do tabuleiro</Text>
+      <View style={{ height: "100%", justifyContent: 'space-around', alignItems: 'center' }}>
+        <PageTitle pageTitle={'Escolha o tabuleiro'} />
+
         <RadioButton.Group
           onValueChange={(value) => setBoardSize(value)}
           value={boardSize}

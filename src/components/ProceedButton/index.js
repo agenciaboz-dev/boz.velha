@@ -1,6 +1,7 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import { useColors } from '../../hooks/useColors';
+import { Text } from 'react-native-paper';
 
 export default function ProceedButton({ buttonText, onPress }) {
   const colors = useColors();
@@ -16,7 +17,7 @@ export default function ProceedButton({ buttonText, onPress }) {
     },
     text: {
       color: 'white',
-      fontSize: 42,
+      fontSize: 40,
     },
   });
 
