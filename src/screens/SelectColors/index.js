@@ -71,7 +71,7 @@ export default function SelectColors({ route, navigation }) {
           </RadioButton.Group>
         </View>
 
-        <ProceedButton buttonText={'Escolher Tabuleiro'} onPress={handleProceed} />
+        <ProceedButton buttonText={'Avançar'} onPress={handleProceed} />
         <BackButton />
       </View>
   );

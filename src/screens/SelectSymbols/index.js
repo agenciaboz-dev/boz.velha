@@ -70,7 +70,7 @@ export default function SelectSymbols({ navigation }) {
         </View>
       </View>
 
-      <ProceedButton buttonText={'Escolher Cores'} onPress={handleProceed} />
+      <ProceedButton buttonText={'Avançar'} onPress={handleProceed} />
       <BackButton />
     </View>
   );
