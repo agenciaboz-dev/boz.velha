@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import Slot from '../Slot';
 
-export default function Board({ board, updateBoard, player1Symbol, player1Color, player2Color }) {
+export default function Board({ board, updateBoard, player1Symbol }) {
   return (
     <View>
         {board.map((row, rowIndex) => (
@@ -15,8 +15,6 @@ export default function Board({ board, updateBoard, player1Symbol, player1Color,
                 updateBoard = {updateBoard}
                 slot = {slot}
                 player1Symbol = {player1Symbol}
-                player1Color = {player1Color}
-                player2Color = {player2Color}
               />
             ))}
           </View>

@@ -7,15 +7,13 @@ import PageTitle from '../../components/PageTitle';
 import { colors } from '../../utils/colors';
 
 export default function SelectSize({ route, navigation }) {
-  const { player1Symbol, player1Color, player2Color } = route.params;
+  const { player1Symbol } = route.params;
 
   const [boardSize, setBoardSize] = useState(3);
 
   const handleProceed = () => {
     navigation.navigate('Game', {
         player1Symbol: player1Symbol,
-        player1Color: player1Color,
-        player2Color: player2Color,
         boardSize: boardSize,
       });
   }

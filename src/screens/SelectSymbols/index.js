@@ -25,7 +25,7 @@ export default function SelectSymbols({ navigation }) {
   };
 
   const handleProceed = () => {
-    navigation.navigate('SelectColors', {
+    navigation.navigate('SelectSize', {
       player1Symbol: player1Choice,
     });
   };

@@ -1,9 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, Text, Image } from 'react-native';
 import { useColors } from '../../hooks/useColors';
-import images from '../../utils/images';
 
-export default function Slot({ rowIndex, colIndex, updateBoard, slot, player1Symbol, player1Color, player2Color }) {
+export default function Slot({ rowIndex, colIndex, updateBoard, slot, player1Symbol }) {
   const colors = useColors();
 
   return (
@@ -30,7 +29,6 @@ export default function Slot({ rowIndex, colIndex, updateBoard, slot, player1Sym
       /> */}
       <Text style={{
           fontSize: 18,
-          color: slot === player1Symbol ? player1Color : player2Color
           }}>
           {slot}
       </Text>
