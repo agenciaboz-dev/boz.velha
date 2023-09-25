@@ -12,14 +12,12 @@ export default function Start({navigation}) {
         }}>
             <Image source={images.boz_logo}
                 style={{
-                    // height: 130,
                     width: 130,
                     resizeMode: "contain",
                 }}
             />
             <Image source={images.game_logo}
                 style={{
-                    // height: 300,
                     width: 300,
                     resizeMode: "contain",
                 }}
