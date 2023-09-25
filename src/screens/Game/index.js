@@ -49,7 +49,7 @@ export default function Game({ route, navigation }) {
             alignItems: "center",
             backgroundColor: colors.background,
             borderRadius: 50,
-            padding: 20,
+            padding: 50,
             paddingBottom: 0,
             width: "90%"
           }}
