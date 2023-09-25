@@ -30,7 +30,6 @@ export default function SelectSize({ route, navigation }) {
             backgroundColor: colors.background,
             borderRadius: 50,
             padding: 20,
-            height: "50%",
             width: "90%"
           }}
         >
