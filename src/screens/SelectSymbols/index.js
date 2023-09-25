@@ -6,6 +6,7 @@ import ProceedButton from '../../components/ProceedButton';
 import PageTitle from '../../components/PageTitle';
 import { useColors } from '../../hooks/useColors';
 import PageSubTitle from '../../components/PageSubTitle';
+import ChoiceSlot from '../../components/ChoiceSlot';
 
 export default function SelectSymbols({ navigation }) {
   const colors = useColors();
@@ -37,7 +38,7 @@ export default function SelectSymbols({ navigation }) {
         style={{
           alignItems: "center",
           backgroundColor: colors.background,
-          borderRadius: 50,
+          borderRadius: 20,
           padding: 20,
           width: "90%"
         }}
@@ -49,23 +50,61 @@ export default function SelectSymbols({ navigation }) {
             onValueChange={(value) => handlePlayer1SymbolChange(value)}
             value={player1Choice}
           >
-            <RadioButton value="O" />
-            <RadioButton value="X" />
+            <View
+              style={{
+                flexDirection: "row"
+              }}
+            >
+              <View
+                style={{
+                  alignItems: "center"
+                }}
+              >
+                <ChoiceSlot symbol="X" />
+                <RadioButton value="X" />
+              </View>
+              <View
+                style={{
+                  alignItems: "center"
+                }}
+              >
+                <ChoiceSlot symbol="O" />
+                <RadioButton value="O" />
+              </View>
+            </View>
           </RadioButton.Group>
-          <Text>{player1Choice}</Text>
         </View>
 
         <PageSubTitle pageSubTitle={'Jogador 2'}/>
         
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <RadioButton.Group
-            onValueChange={(value) => handlePlayer2SymbolChange(value)}
+            onValueChange={(value) => handlePlayer1SymbolChange(value)}
             value={player2Choice}
           >
-            <RadioButton value="O" />
-            <RadioButton value="X" />
+            <View
+              style={{
+                flexDirection: "row"
+              }}
+            >
+              <View
+                style={{
+                  alignItems: "center"
+                }}
+              >
+                <ChoiceSlot symbol="X" />
+                <RadioButton value="X" />
+              </View>
+              <View
+                style={{
+                  alignItems: "center"
+                }}
+              >
+                <ChoiceSlot symbol="O" />
+                <RadioButton value="O" />
+              </View>
+            </View>
           </RadioButton.Group>
-          <Text>{player2Choice}</Text>
         </View>
       </View>
 
