@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { createInitialBoard, handleSlotPress, checkWinner, checkDraw } from '../../utils/gameLogic';
 import Board from '../../components/Board';
+import { useColors } from '../../hooks/useColors';
+import PageTitle from '../../components/PageTitle';
+import images from '../../utils/images';
 
 export default function Game({ route, navigation }) {
+  const colors = useColors();
+
   const { player1Symbol, player1Color, player2Color, boardSize } = route.params;
   const parsedBoardSize = parseInt(boardSize);
-
   const initialBoard = createInitialBoard(parsedBoardSize);
 
   const [board, setBoard] = useState(initialBoard);
@@ -28,19 +32,44 @@ export default function Game({ route, navigation }) {
       <View
         style={{
           height: "100%",
-          flexDirection: 'row',
-          // backgroundColor: '#fff',
+          flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-evenly',
         }}
       >
-        <Board
-          board = {board}
-          updateBoard = {updateBoard}
-          player1Symbol = {player1Symbol}
-          player1Color = {player1Color}
-          player2Color = {player2Color}
+        <Image source={images.boz_logo}
+          style={{
+            width: 130,
+            resizeMode: "contain",
+          }}
         />
+        <PageTitle pageTitle={`Vez do jogador ${currentPlayer}`} />
+        <View
+          style={{
+            alignItems: "center",
+            backgroundColor: colors.background,
+            borderRadius: 50,
+            padding: 20,
+            paddingBottom: 0,
+            width: "90%"
+          }}
+        >
+          <Board
+            board = {board}
+            updateBoard = {updateBoard}
+            player1Symbol = {player1Symbol}
+            player1Color = {player1Color}
+            player2Color = {player2Color}
+          />
+          <Image source={images.bozzer_writing}
+            style={{
+              height: 150,
+              width: 250,
+              resizeMode: "cover",
+              marginTop: "auto",
+            }}
+          />
+        </View>
       </View >
   )
 }
