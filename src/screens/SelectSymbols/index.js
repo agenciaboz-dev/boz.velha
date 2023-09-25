@@ -49,8 +49,8 @@ export default function SelectSymbols({ navigation }) {
             onValueChange={(value) => handlePlayer1SymbolChange(value)}
             value={player1Choice}
           >
-            <RadioButton.Android value="O" />
-            <RadioButton.Android value="X" />
+            <RadioButton value="O" />
+            <RadioButton value="X" />
           </RadioButton.Group>
           <Text>{player1Choice}</Text>
         </View>
@@ -62,8 +62,8 @@ export default function SelectSymbols({ navigation }) {
             onValueChange={(value) => handlePlayer2SymbolChange(value)}
             value={player2Choice}
           >
-            <RadioButton.Android value="O" />
-            <RadioButton.Android value="X" />
+            <RadioButton value="O" />
+            <RadioButton value="X" />
           </RadioButton.Group>
           <Text>{player2Choice}</Text>
         </View>
