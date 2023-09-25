@@ -79,7 +79,7 @@ export default function SelectSymbols({ navigation }) {
         
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <RadioButton.Group
-            onValueChange={(value) => handlePlayer1SymbolChange(value)}
+            onValueChange={(value) => handlePlayer2SymbolChange(value)}
             value={player2Choice}
           >
             <View
