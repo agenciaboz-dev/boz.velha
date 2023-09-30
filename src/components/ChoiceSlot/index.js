@@ -11,7 +11,10 @@ export default function ChoiceSlot({ symbol }) {
       style={[
         {
           backgroundColor: colors.primary,
-          margin: 20,
+          marginTop: 10,
+          marginRight: 40,
+          marginBottom: 10,
+          marginLeft: 40,
           height: 70,
           width: 70,
           justifyContent: 'center',

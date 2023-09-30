@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
+import CustomRadioButton from '../../components/CustomRadioButton';
 import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
 import PageTitle from '../../components/PageTitle';
@@ -45,67 +46,48 @@ export default function SelectSymbols({ navigation }) {
       >
         <PageSubTitle pageSubTitle={'Jogador 1'}/>
 
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <RadioButton.Group
-            onValueChange={(value) => handlePlayer1SymbolChange(value)}
-            value={player1Choice}
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
+          <View
+            style={{
+              alignItems: "center"
+            }}
           >
-            <View
-              style={{
-                flexDirection: "row"
-              }}
-            >
-              <View
-                style={{
-                  alignItems: "center"
-                }}
-              >
-                <ChoiceSlot symbol="X" />
-                <RadioButton value="X" />
-              </View>
-              <View
-                style={{
-                  alignItems: "center"
-                }}
-              >
-                <ChoiceSlot symbol="O" />
-                <RadioButton value="O" />
-              </View>
-            </View>
-          </RadioButton.Group>
+            <ChoiceSlot symbol="X" />
+            <CustomRadioButton selected={player1Choice === 'X'} onPress={() => handlePlayer1SymbolChange('X')} />
+          </View>
+
+          <View
+            style={{
+              alignItems: "center"
+            }}
+          >
+            <ChoiceSlot symbol="O" />
+            <CustomRadioButton selected={player1Choice === 'O'} onPress={() => handlePlayer1SymbolChange('O')} />
+          </View>
         </View>
 
         <PageSubTitle pageSubTitle={'Jogador 2'}/>
         
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <RadioButton.Group
-            onValueChange={(value) => handlePlayer2SymbolChange(value)}
-            value={player2Choice}
+          <View
+            style={{
+              alignItems: "center"
+            }}
           >
-            <View
-              style={{
-                flexDirection: "row"
-              }}
-            >
-              <View
-                style={{
-                  alignItems: "center"
-                }}
-              >
-                <ChoiceSlot symbol="X" />
-                <RadioButton value="X" />
-              </View>
-              <View
-                style={{
-                  alignItems: "center"
-                }}
-              >
-                <ChoiceSlot symbol="O" />
-                <RadioButton value="O" />
-              </View>
-            </View>
-          </RadioButton.Group>
+            <ChoiceSlot symbol="X" />
+            <CustomRadioButton selected={player2Choice === 'X'} onPress={() => handlePlayer2SymbolChange('X')} />
+          </View>
+
+          <View
+            style={{
+              alignItems: "center"
+            }}
+          >
+            <ChoiceSlot symbol="O" />
+            <CustomRadioButton selected={player2Choice === 'O'} onPress={() => handlePlayer2SymbolChange('O')} />
+          </View>
         </View>
+
       </View>
 
       <ProceedButton buttonText={'Avançar'} onPress={handleProceed} />
