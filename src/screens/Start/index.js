@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { BackHandler, Platform, View, Image } from 'react-native';
 import ProceedButton from '../../components/ProceedButton';
 import images from '../../utils/images';
+import BackButton from '../../components/BackButton';
 
 export default function Start({navigation}) {
     return (
@@ -31,6 +32,14 @@ export default function Start({navigation}) {
                 }}
             />
             <ProceedButton buttonText={'Jogar'} onPress={() => navigation.navigate('SelectSymbols')} />
+            
+            {Platform.OS != "ios" && (
+                        <BackButton
+                            buttonText={'Sair'}
+                            onPress={() => BackHandler.exitApp()}
+                        />
+                    )}
+
         </View>
     )
 }
