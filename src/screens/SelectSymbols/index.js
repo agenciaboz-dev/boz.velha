@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
-import { RadioButton } from 'react-native-paper';
+import { View } from 'react-native';
 import CustomRadioButton from '../../components/CustomRadioButton';
 import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
@@ -10,26 +9,30 @@ import PageSubTitle from '../../components/PageSubTitle';
 import ChoiceSlot from '../../components/ChoiceSlot';
 
 export default function SelectSymbols({ navigation }) {
-  const colors = useColors();
+  const colors = useColors()
 
-  const [player1Choice, setPlayer1Choice] = useState('O');
-  const [player2Choice, setPlayer2Choice] = useState('X');
+  const [player1Choice, setPlayer1Choice] = useState('O')
+  const [player2Choice, setPlayer2Choice] = useState('X')
 
   const handlePlayer1SymbolChange = (selectedSymbol) => {
-    setPlayer1Choice(selectedSymbol);
-    setPlayer2Choice(selectedSymbol === 'X' ? 'O' : 'X');
-  };
+    setPlayer1Choice(selectedSymbol)
+    setPlayer2Choice(selectedSymbol === 'X' ? 'O' : 'X')
+  }
 
   const handlePlayer2SymbolChange = (selectedSymbol) => {
     setPlayer2Choice(selectedSymbol);
-    setPlayer1Choice(selectedSymbol === 'X' ? 'O' : 'X');
-  };
+    setPlayer1Choice(selectedSymbol === 'X' ? 'O' : 'X')
+  }
 
   const handleProceed = () => {
     navigation.navigate('SelectSize', {
       player1Symbol: player1Choice,
-    });
-  };
+    })
+  }
+
+  const handleGoBack = () => {
+    navigation.goBack()
+  }
 
   return (
     <View style={{ height: "100%", justifyContent: 'space-evenly', alignItems: 'center' }}>
@@ -91,7 +94,7 @@ export default function SelectSymbols({ navigation }) {
       </View>
 
       <ProceedButton buttonText={'Avançar'} onPress={handleProceed} />
-      <BackButton />
+      <BackButton buttonText={'Voltar'} onPress={handleGoBack} />
     </View>
   );
 }

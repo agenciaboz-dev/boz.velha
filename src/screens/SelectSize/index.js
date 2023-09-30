@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
-import { Text, View } from 'react-native';
-import { RadioButton } from 'react-native-paper';
-import BackButton from '../../components/BackButton';
-import ProceedButton from '../../components/ProceedButton';
-import PageTitle from '../../components/PageTitle';
-import { colors } from '../../utils/colors';
-import CustomRadioButton from '../../components/CustomRadioButton';
-import PageSubTitle from '../../components/PageSubTitle';
+import React, { useState } from 'react'
+import { View } from 'react-native'
+import BackButton from '../../components/BackButton'
+import ProceedButton from '../../components/ProceedButton'
+import PageTitle from '../../components/PageTitle'
+import { colors } from '../../utils/colors'
+import CustomRadioButton from '../../components/CustomRadioButton'
+import PageSubTitle from '../../components/PageSubTitle'
 
 export default function SelectSize({ route, navigation }) {
   const { player1Symbol } = route.params;
 
-  const [boardSize, setBoardSize] = useState('3');
+  const [boardSize, setBoardSize] = useState('3')
 
   const handleProceed = () => {
     navigation.navigate('Game', {
         player1Symbol: player1Symbol,
         boardSize: boardSize,
-      });
+      })
+  }
+
+  const handleGoBack = () => {
+    navigation.goBack()
   }
 
   return (
@@ -53,7 +56,7 @@ export default function SelectSize({ route, navigation }) {
         </View>
 
         <ProceedButton buttonText={'Começar!'} onPress={handleProceed} />
-        <BackButton />
+        <BackButton buttonText={'Voltar'} onPress={handleGoBack} />
       </View>
   );
 }

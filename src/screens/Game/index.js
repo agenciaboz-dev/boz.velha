@@ -5,6 +5,7 @@ import Board from '../../components/Board';
 import { useColors } from '../../hooks/useColors';
 import PageTitle from '../../components/PageTitle';
 import images from '../../utils/images';
+import BackButton from '../../components/BackButton';
 
 export default function Game({ route, navigation }) {
   const colors = useColors();
@@ -70,6 +71,9 @@ export default function Game({ route, navigation }) {
             }}
           />
         </View>
+
+        <BackButton buttonText={'Sair'} onPress={() => { navigation.navigate('Start')}} />
+
       </View >
   )
 }
