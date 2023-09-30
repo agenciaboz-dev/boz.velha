@@ -10,7 +10,7 @@ import BackButton from '../../components/BackButton';
 export default function Game({ route, navigation }) {
   const colors = useColors();
 
-  const { player1Symbol, player1Color, player2Color, boardSize } = route.params;
+  const { player1Symbol, boardSize } = route.params;
   const parsedBoardSize = parseInt(boardSize);
   const initialBoard = createInitialBoard(parsedBoardSize);
 
@@ -59,8 +59,6 @@ export default function Game({ route, navigation }) {
             board = {board}
             updateBoard = {updateBoard}
             player1Symbol = {player1Symbol}
-            player1Color = {player1Color}
-            player2Color = {player2Color}
           />
           <Image source={images.bozzer_writing}
             style={{
