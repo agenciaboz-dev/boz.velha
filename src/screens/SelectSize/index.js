@@ -11,7 +11,7 @@ import PageSubTitle from '../../components/PageSubTitle';
 export default function SelectSize({ route, navigation }) {
   const { player1Symbol } = route.params;
 
-  const [boardSize, setBoardSize] = useState(3);
+  const [boardSize, setBoardSize] = useState('3');
 
   const handleProceed = () => {
     navigation.navigate('Game', {
