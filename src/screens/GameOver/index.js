@@ -3,6 +3,7 @@ import { Image, View } from 'react-native';
 import ProceedButton from '../../components/ProceedButton';
 import PageTitle from '../../components/PageTitle';
 import images from '../../utils/images';
+import CloseButton from '../../components/CloseButton';
 
 export default function GameOver({ route, navigation }) {
     const outcome = route.params.outcome
@@ -13,11 +14,24 @@ export default function GameOver({ route, navigation }) {
     }, [])
 
   return (
-    <View style={{
-      justifyContent: "space-evenly",
-      alignItems: "center",
-      height: "100%"
-    }}>
+    <View
+      style={{
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        height: "100%"
+      }}
+    >
+
+      <View
+        style={{
+          position: "absolute",
+          top: 40,
+          left: 40
+        }}
+      >
+        <CloseButton onPress={() => { navigation.navigate('Start')}} />
+      </View>
+
       <Image source={images.boz_logo}
         style={{
           width: 130,

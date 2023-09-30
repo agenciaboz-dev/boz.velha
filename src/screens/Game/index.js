@@ -5,7 +5,7 @@ import Board from '../../components/Board';
 import { useColors } from '../../hooks/useColors';
 import PageTitle from '../../components/PageTitle';
 import images from '../../utils/images';
-import BackButton from '../../components/BackButton';
+import CloseButton from '../../components/CloseButton';
 
 export default function Game({ route, navigation }) {
   const colors = useColors();
@@ -30,48 +30,57 @@ export default function Game({ route, navigation }) {
   };
 
   return (
+    <View
+      style={{
+        height: "100%",
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+      }}
+    >
+      
       <View
         style={{
-          height: "100%",
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-evenly',
+          position: "absolute",
+          top: 40,
+          left: 40
         }}
       >
-        <Image source={images.boz_logo}
+        <CloseButton onPress={() => { navigation.navigate('Start')}} />
+      </View>
+
+      <Image source={images.boz_logo}
+        style={{
+          width: 130,
+          resizeMode: "contain",
+        }}
+      />
+
+      <PageTitle pageTitle={`Vez do jogador ${currentPlayer}`} />
+      <View
+        style={{
+          alignItems: "center",
+          backgroundColor: colors.background,
+          borderRadius: 50,
+          padding: 50,
+          paddingBottom: 0,
+          width: "90%"
+        }}
+      >
+        <Board
+          board = {board}
+          updateBoard = {updateBoard}
+          player1Symbol = {player1Symbol}
+        />
+        <Image source={images.bozzer_writing}
           style={{
-            width: 130,
-            resizeMode: "contain",
+            height: 150,
+            width: 250,
+            resizeMode: "cover",
+            marginTop: "auto",
           }}
         />
-        <PageTitle pageTitle={`Vez do jogador ${currentPlayer}`} />
-        <View
-          style={{
-            alignItems: "center",
-            backgroundColor: colors.background,
-            borderRadius: 50,
-            padding: 50,
-            paddingBottom: 0,
-            width: "90%"
-          }}
-        >
-          <Board
-            board = {board}
-            updateBoard = {updateBoard}
-            player1Symbol = {player1Symbol}
-          />
-          <Image source={images.bozzer_writing}
-            style={{
-              height: 150,
-              width: 250,
-              resizeMode: "cover",
-              marginTop: "auto",
-            }}
-          />
-        </View>
-
-        <BackButton buttonText={'Sair'} onPress={() => { navigation.navigate('Start')}} />
-
-      </View >
+      </View>
+    </View >
   )
 }
