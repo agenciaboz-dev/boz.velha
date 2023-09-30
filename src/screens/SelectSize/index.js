@@ -5,6 +5,8 @@ import BackButton from '../../components/BackButton';
 import ProceedButton from '../../components/ProceedButton';
 import PageTitle from '../../components/PageTitle';
 import { colors } from '../../utils/colors';
+import CustomRadioButton from '../../components/CustomRadioButton';
+import PageSubTitle from '../../components/PageSubTitle';
 
 export default function SelectSize({ route, navigation }) {
   const { player1Symbol } = route.params;
@@ -19,7 +21,7 @@ export default function SelectSize({ route, navigation }) {
   }
 
   return (
-      <View style={{ height: "100%", justifyContent: 'space-around', alignItems: 'center' }}>
+      <View style={{ height: "100%", justifyContent: 'space-evenly', alignItems: 'center' }}>
         <PageTitle pageTitle={'Escolha o tabuleiro'} />
 
         <View
@@ -28,26 +30,26 @@ export default function SelectSize({ route, navigation }) {
             backgroundColor: colors.background,
             borderRadius: 50,
             padding: 20,
-            width: "90%"
+            width: "90%",
+            gap: 40
           }}
         >
-          <RadioButton.Group
-            onValueChange={(value) => setBoardSize(value)}
-            value={boardSize}
-          >
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <RadioButton.Android value="3" />
-              <Text>3 x 3</Text>
-            </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <RadioButton.Android value="4" />
-              <Text>4 x 4</Text>
-            </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <RadioButton.Android value="5" />
-              <Text>5 x 5</Text>
-            </View>
-          </RadioButton.Group>
+
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 20 }} >
+            <PageSubTitle pageSubTitle={'3 x 3'}/>
+            <CustomRadioButton selected={boardSize === '3'} onPress={() => setBoardSize('3')} />
+          </View>
+
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 20 }} >
+            <PageSubTitle pageSubTitle={'4 x 4'}/>
+            <CustomRadioButton selected={boardSize === '4'} onPress={() => setBoardSize('4')} />
+          </View>
+
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 20 }} >
+            <PageSubTitle pageSubTitle={'5 x 5'}/>
+            <CustomRadioButton selected={boardSize === '5'} onPress={() => setBoardSize('5')} />
+          </View>
+
         </View>
 
         <ProceedButton buttonText={'Começar!'} onPress={handleProceed} />
