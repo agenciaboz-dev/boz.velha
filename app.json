@@ -1,30 +1,29 @@
 {
   "expo": {
-    "name": "boz.velha",
-    "slug": "boz.velha",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+      "name": "Duelo da Vovó",
+      "slug": "bozvelha",
+      "version": "1.0.0",
+      "orientation": "portrait",
+      "icon": "./assets/images/playstore-icon.png",
+      "userInterfaceStyle": "light",
+      "splash": {
+          "image": "./assets/images/SplashScreen.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+      },
+      "assetBundlePatterns": ["**/*"],
+      "ios": {
+          "supportsTablet": true
+      },
+      "android": {
+          "adaptiveIcon": {
+              "foregroundImage": "./assets/images/playstore-icon.png",
+              "monochromeImage": "./assets/images/adaptiveicon.png",
+              "backgroundColor": "#ffffff"
+          }
+      },
+      "web": {
+          "favicon": "./assets/images/favicon.png"
       }
-    },
-    "web": {
-      "favicon": "./assets/images/favicon.png"
-    }
   }
 }
