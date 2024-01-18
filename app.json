@@ -4,6 +4,7 @@
         "slug": "bozvelha",
         "version": "1.0.0",
         "orientation": "portrait",
+        "owner": "agenciaboz-dev",
         "icon": "./assets/images/playstore-icon.png",
         "userInterfaceStyle": "light",
         "splash": {
@@ -14,7 +15,7 @@
         "assetBundlePatterns": ["**/*"],
         "ios": {
             "supportsTablet": true,
-            "bundleIdentifier": "com.ispadilha.bozvelha"
+            "bundleIdentifier": "com.agenciabozdev.bozvelha"
         },
         "android": {
             "adaptiveIcon": {
@@ -29,9 +30,8 @@
         },
         "extra": {
             "eas": {
-                "projectId": "a05d0f8f-c519-43b7-8b85-eafd16ea025a"
+                "projectId": "15489765-9c81-4703-a3e9-fda4187212af"
             }
-        },
-        "env": {}
+        }
     }
 }
